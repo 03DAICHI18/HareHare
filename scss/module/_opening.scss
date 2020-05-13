@@ -1,6 +1,9 @@
 .opening {
   background-color: #333;
   background-image: radial-gradient(#b83131, #000);
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
   color: #fff;
   text-align: center;
   width: 100vw;
@@ -14,17 +17,21 @@
 }
 
 .opening-animation {
+  // position: fixed;
   opacity: 0;
+  // width: 80vw;
   -webkit-animation: movie 7s linear infinite;
   animation: movie 7s linear infinite;
 }
 
 .opening-animation:nth-child(2) {
   -webkit-animation-delay: 2s;
-  animation-delay: 2s;
+  animation-delay: 2s
 }
 
 .opening-animation span {
+  // display: block;
+  // font-size: .6em;
   opacity: .8;
 }
 
@@ -33,43 +40,50 @@
     opacity: 0;
     -webkit-filter: blur(20px);
     filter: blur(20px);
-    transform: scale(15);
+    transform: scale(15)
   }
+
   5% {
     opacity: .5;
     -webkit-filter: blur(10px);
     filter: blur(10px);
-    transform: scale(10);
+    transform: scale(10)
   }
+
   10% {
     opacity: 1;
     -webkit-filter: blur(0);
     filter: blur(0);
-    transform: scale(5);
+    transform: scale(5)
   }
+
   20% {
     opacity: 1;
     -webkit-filter: blur(0);
     filter: blur(0);
-    transform: scale(3);
+    transform: scale(3)
   }
+
   30% {
     opacity: .7;
     -webkit-filter: blur(5px);
     filter: blur(5px);
-    transform: scale(1);
+    transform: scale(1)
   }
+
   50% {
     opacity: .5;
     -webkit-filter: blur(20px);
     filter: blur(20px);
-    transform: scale(0.4);
+    transform: scale(.4)
   }
+
   70% {
-    opacity: 0;
+    opacity: 0
   }
+
   100% {
-    opacity: 0;
+    opacity: 0
   }
 }
 
@@ -78,42 +92,49 @@
     opacity: 0;
     -webkit-filter: blur(20px);
     filter: blur(20px);
-    transform: scale(15);
+    transform: scale(15)
   }
+
   5% {
     opacity: .5;
     -webkit-filter: blur(10px);
     filter: blur(10px);
-    transform: scale(10);
+    transform: scale(10)
   }
+
   10% {
     opacity: 1;
     -webkit-filter: blur(0);
     filter: blur(0);
-    transform: scale(5);
+    transform: scale(5)
   }
+
   20% {
     opacity: 1;
     -webkit-filter: blur(0);
     filter: blur(0);
-    transform: scale(3);
+    transform: scale(3)
   }
+
   30% {
     opacity: .7;
     -webkit-filter: blur(5px);
     filter: blur(5px);
-    transform: scale(1);
+    transform: scale(1)
   }
+
   50% {
     opacity: .5;
     -webkit-filter: blur(20px);
     filter: blur(20px);
-    transform: scale(0.4);
+    transform: scale(.4)
   }
+
   70% {
-    opacity: 0;
+    opacity: 0
   }
+
   100% {
-    opacity: 0;
+    opacity: 0
   }
 }
