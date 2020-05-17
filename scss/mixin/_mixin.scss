@@ -1,0 +1,13 @@
+// ・・・・・・・ レスポンシブwidth設定（スマホ基準）・・・・・・・
+$mq-breakpoints: ('xs': 320px,
+  'sp': 480px,
+  'tab': 768px,
+  'pc' : 1024px,
+  'full': 1280px,
+);
+
+@mixin mq($breakpoint: sp) {
+  @media screen and (min-width: #{map-get($mq-breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
