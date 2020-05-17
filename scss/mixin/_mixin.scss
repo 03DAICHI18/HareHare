@@ -11,3 +11,8 @@ $mq-breakpoints: ('xs': 320px,
     @content;
   }
 }
+
+// //・・・・・・・ 色設定・・・・・・・
+@mixin ftcolor($color: #1c1c1c) {
+  color: $color;
+}

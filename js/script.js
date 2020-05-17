@@ -9,4 +9,11 @@ $(function () {
     $('body,html').animate({ scrollTop: position }, 500);
     return false;
   });
+
+  // ・・・・・・・・・・・・・・・・・・ハンバーガーメニュー・・・・・・・・・・・・・・・・・・
+  var $header = $('#header');
+  $('.button-trigger').on('click', function () {
+    $(this).toggleClass('active');
+    return false;
+  });
 });

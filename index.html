@@ -30,9 +30,11 @@
   <!-- ------- ファビコン  ------- -->
   <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png">
+  <!-- ------- 以下、読み込みタグ  ------- -->
   <link rel="stylesheet" href="scss/base/reset.css" type="text/css" />
   <link rel="stylesheet" href="scss/style.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300&family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="opening" class="opening">
@@ -43,24 +45,50 @@
     </div>
   </div>
   <div id="wrap">
-    <header>
-      <ul>
-        <li><a href="#about">about</a></li>
-        <li><a href="#release">release</a></li>
-        <li><a href="#information">information</a></li>
-        <li><a href="#member">member</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>
+    <div class="hero">
+      <div id="youtube-wrap" class="youtube-wrap">
+        <div id="youtube" data-property="{
+          videoURL: 'https://youtu.be/Y7sd9AIv2SM',
+          containment: '#youtube-wrap',
+          autoPlay: true,
+          loop: 1,
+          mute: true,
+          startAt: 40,
+          stopAt: 62,
+          opacity: 1,
+          showControls: false,
+          showYTLogo: false,
+        }"></div>
+      </div>
+    </div>
+    <header id="header" class="header">
+      <button id="button">
+        <div class="button button-trigger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <nav id="header-nav">
+        <ul class="header-nav__list">
+          <li><a href="#harehare">HareHare</a></li>
+          <li><a href="#release">Release</a></li>
+          <li><a href="#information">Information</a></li>
+          <li><a href="#member">Member</a></li>
+          <li><a href="#social">Social</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-      <section id="about">
-        <h2>About</h2>
+      <section id="harehare">
+        <h2>HareHare</h2>
       </section>
       <section id="release">
         <h2>Release</h2>
       </section>
-      <section id="news">
-        <h2>News</h2>
+      <section id="information">
+        <h2>Information</h2>
       </section>
       <section id="member">
         <h2>Member</h2>
@@ -69,10 +97,14 @@
         <h2>Social</h2>
       </section>
     </main>
-    <footer id="contact"></footer>
+    <footer id="contact">Contact</footer>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script type="text/javascript" src="js/opening.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/jquery.mb.YTPlayer.min.js"></script>
+  <script>
+    $('#youtube').YTPlayer();
+  </script>
 </body>
 </html>
