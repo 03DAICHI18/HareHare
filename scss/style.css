@@ -374,10 +374,10 @@ body {
     height: 100vh;
     /* mobile viewport bug fix */
     min-height: -webkit-fill-available;
-    background-image: url(../../harehare2.jpg);
+    background-image: url(../../img/harehare1.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
   }
   .youtube-wrap {
     display: none;
@@ -404,7 +404,7 @@ body {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 2px;
   background-color: #1c1c1c;
   border-radius: 4px;
 }
@@ -430,17 +430,17 @@ body {
 
 /*ハンバーガーボタン クローズ時*/
 .button.active::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
-  display: block;
-  content: '';
-  width: 84px;
-  height: 84px;
-  margin: -45px 0 0 -45px;
-  border-radius: 50%;
-  border: 4px solid #1c1c1c;
-  transition: all .75s;
+  transform: translate(-50%, -50%);
+  border: 2px solid #1c1c1c;
+  transition: all .7s;
 }
 
 .button.active span:nth-of-type(1) {
@@ -473,11 +473,11 @@ body {
 }
 
 .button.active::after {
-  border: 4px solid #1c1c1c;
+  border: 2px solid #5c5c5c;
 }
 
 /*PC時グローバルナビ*/
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 481px) {
   #button {
     display: none;
   }
