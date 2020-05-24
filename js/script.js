@@ -11,22 +11,21 @@ $(function () {
   });
 
   // ・・・・・・・・・・・・・・・・・・ハンバーガーメニュー・・・・・・・・・・・・・・・・・・
-  var $header = $('#header');
   $('.button-trigger').on('click', function () {
     $(this).toggleClass('active');
     if ($(this).hasClass('active')) {
-      $('.button').addClass('active');
+      $('.button-trigger').addClass('active');
     } else {
-      $('.button').removeClass('active');
+      $('.button-trigger').removeClass('active');
     }
-    $('#header-nav').slideToggle();
+    $('#drawer-menu').slideToggle();
+
     var movefun = function (event) {
       event.preventDefault();
-      return false;
-    }
+    };
+    // スクロール停止の処理
+    window.addEventListener("touchmove", movefun, { passive: false });
+    // スクロール停止することを停止する処理
+    window.removeEventListener("touchmove", movefun, { passive: false });
   });
-  // 背景画面のスクロール停止の処理
-  window.addEventListener('touchmove', movefun, { passive: false });
-  // 背景画面のスクロール停止することを停止する処理
-  window.removeEventListener('touchmove', movefun, { passive: false });
 });
