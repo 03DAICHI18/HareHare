@@ -32,7 +32,7 @@
   width: 50%;
   height: 130%;
   content: '';
-  background-color: rgb(223, 225, 86);
+  background-color: #e2421a;
 }
 
 .opening-curtain::before {
@@ -54,23 +54,23 @@
 
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #86c688;
+    background-color: #d29a89;
   }
 
   40% {
     transform: rotate(6deg) translateX(-40%);
-    background-color: #3d9abc;
+    // background-color: #3d9abc;
   }
 
   60% {
     transform: rotate(8deg) translateX(-50%);
-    background-color: #7c3dbc;
+    // background-color: #7c3dbc;
   }
 
   80% {
     transform: rotate(10deg) translateX(-50%);
     opacity: 1;
-    background-color: #bd2131;
+    // background-color: #bd2131;
   }
 
   100% {
@@ -87,23 +87,23 @@
 
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #86c688;
+    background-color: #d29a89;
   }
 
   40% {
     transform: rotate(6deg) translateX(-40%);
-    background-color: #3d9abc;
+    // background-color: #3d9abc;
   }
 
   60% {
     transform: rotate(8deg) translateX(-50%);
-    background-color: #7c3dbc;
+    // background-color: #7c3dbc;
   }
 
   80% {
     transform: rotate(10deg) translateX(-50%);
     opacity: 1;
-    background-color: #bd2131;
+    // background-color: #bd2131;
   }
 
   100% {
@@ -120,23 +120,23 @@
 
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #86c688;
+    background-color: #d29a89;
   }
 
   40% {
     transform: rotate(-6deg) translateX(40%);
-    background-color: #3d9abc;
+    // background-color: #3d9abc;
   }
 
   60% {
     transform: rotate(-8deg) translateX(50%);
-    background-color: #7c3dbc;
+    // background-color: #7c3dbc;
   }
 
   80% {
     transform: rotate(-10deg) translateX(50%);
     opacity: 1;
-    background-color: #bd2131;
+    // background-color: #bd2131;
   }
 
   100% {
@@ -153,23 +153,23 @@
 
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #86c688;
+    background-color: #d29a89;
   }
 
   40% {
     transform: rotate(-6deg) translateX(40%);
-    background-color: #3d9abc;
+    // background-color: #3d9abc;
   }
 
   60% {
     transform: rotate(-8deg) translateX(50%);
-    background-color: #7c3dbc;
+    // background-color: #7c3dbc;
   }
 
   80% {
     transform: rotate(-10deg) translateX(50%);
     opacity: 1;
-    background-color: #bd2131;
+    // background-color: #bd2131;
   }
 
   100% {
@@ -184,16 +184,20 @@
   font-size: 2rem;
   letter-spacing: .5em;
 
-  @include mq(sp) {
+  @media screen and (min-width: 400px) {
     font-size: 2.5rem;
   }
 
-  @include mq(tab) {
+  @include mq(sp) {
     font-size: 3rem;
   }
 
+  @include mq(tab) {
+    font-size: 5rem;
+  }
+
   @include mq(pc) {
-    font-size: 4rem;
+    font-size: 6rem;
   }
 }
 

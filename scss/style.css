@@ -1,7 +1,12 @@
 @charset "UTF-8";
 body {
   font-family: 'Fira Sans', 'Noto Sans JP', sans-serif;
-  background-color: #d4d4d4;
+  background: #ebebeb;
+  background: radial-gradient(circle, #ebebeb 0%, #fafafa 50%, #fcc246 100%);
+  color: #1c1c1c;
+}
+
+a {
   color: #1c1c1c;
 }
 
@@ -39,7 +44,7 @@ body {
   width: 50%;
   height: 130%;
   content: '';
-  background-color: #dfe156;
+  background-color: #e2421a;
 }
 
 .opening-curtain::before {
@@ -60,20 +65,17 @@ body {
   }
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #86c688;
+    background-color: #d29a89;
   }
   40% {
     transform: rotate(6deg) translateX(-40%);
-    background-color: #3d9abc;
   }
   60% {
     transform: rotate(8deg) translateX(-50%);
-    background-color: #7c3dbc;
   }
   80% {
     transform: rotate(10deg) translateX(-50%);
     opacity: 1;
-    background-color: #bd2131;
   }
   100% {
     transform: rotate(0deg) translateX(-100%);
@@ -88,20 +90,17 @@ body {
   }
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #86c688;
+    background-color: #d29a89;
   }
   40% {
     transform: rotate(6deg) translateX(-40%);
-    background-color: #3d9abc;
   }
   60% {
     transform: rotate(8deg) translateX(-50%);
-    background-color: #7c3dbc;
   }
   80% {
     transform: rotate(10deg) translateX(-50%);
     opacity: 1;
-    background-color: #bd2131;
   }
   100% {
     transform: rotate(0deg) translateX(-100%);
@@ -116,20 +115,17 @@ body {
   }
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #86c688;
+    background-color: #d29a89;
   }
   40% {
     transform: rotate(-6deg) translateX(40%);
-    background-color: #3d9abc;
   }
   60% {
     transform: rotate(-8deg) translateX(50%);
-    background-color: #7c3dbc;
   }
   80% {
     transform: rotate(-10deg) translateX(50%);
     opacity: 1;
-    background-color: #bd2131;
   }
   100% {
     transform: rotate(0deg) translateX(100%);
@@ -144,20 +140,17 @@ body {
   }
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #86c688;
+    background-color: #d29a89;
   }
   40% {
     transform: rotate(-6deg) translateX(40%);
-    background-color: #3d9abc;
   }
   60% {
     transform: rotate(-8deg) translateX(50%);
-    background-color: #7c3dbc;
   }
   80% {
     transform: rotate(-10deg) translateX(50%);
     opacity: 1;
-    background-color: #bd2131;
   }
   100% {
     transform: rotate(0deg) translateX(100%);
@@ -172,21 +165,27 @@ body {
   letter-spacing: .5em;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 400px) {
   .opening-title {
     font-size: 2.5rem;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
   .opening-title {
     font-size: 3rem;
   }
 }
 
+@media screen and (min-width: 768px) {
+  .opening-title {
+    font-size: 5rem;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .opening-title {
-    font-size: 4rem;
+    font-size: 6rem;
   }
 }
 
@@ -345,10 +344,10 @@ body {
   height: 100vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
-  background-image: url(https://03daichi18.github.io/HareHare/img/harehare1.jpg);
+  background-image: url(../../img/sp-hero.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .youtube-wrap {
@@ -363,6 +362,7 @@ body {
     min-height: -webkit-fill-available;
   }
   .youtube-wrap {
+    display: block;
     position: relative;
     width: 100%;
     height: 100%;
@@ -475,10 +475,34 @@ body {
   border: 2px solid #5c5c5c;
 }
 
-/*PC時グローバルナビ*/
+/*ハンバーナビメニュー*/
+.header-nav {
+  display: none;
+}
+
+.header-nav__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 100;
+  background: #fdbb2d;
+  background: linear-gradient(0deg, #fdbb2d 0%, rgba(255, 246, 226, 0.67458) 100%);
+}
+
+/*******PC時グローバルナビ*******/
 @media screen and (min-width: 481px) {
   #button {
     display: none;
+  }
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
   }
   #header-nav {
     width: 100%;

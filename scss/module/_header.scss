@@ -90,11 +90,35 @@
   border: 2px solid #5c5c5c;
 }
 
+/*ハンバーナビメニュー*/
+.header-nav {
+  display: none;
+}
 
-/*PC時グローバルナビ*/
+.header-nav__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 100;
+  background: rgb(253, 187, 45);
+  background: linear-gradient(0deg, rgba(253, 187, 45, 1) 0%, rgba(255, 246, 226, 0.674580223880597) 100%);
+}
+
+/*******PC時グローバルナビ*******/
 @media screen and (min-width: 481px) {
   #button {
     display: none;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
   }
 
   #header-nav {

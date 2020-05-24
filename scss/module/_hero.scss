@@ -3,10 +3,10 @@
   height: 100vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
-  background-image: url(https://03daichi18.github.io/HareHare/img/harehare1.jpg);
+  background-image: url(../../img/sp-hero.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .youtube-wrap {
@@ -23,6 +23,7 @@
 
 
   .youtube-wrap {
+    display: block;
     position: relative;
     width: 100%;
     height: 100%;
