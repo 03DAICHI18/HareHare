@@ -45,47 +45,40 @@
       </div>
     </div>
   </div>
-  <div id="wrap">
-    <div id="hero" class="hero">
-      <div id="youtube-wrap" class="youtube-wrap">
-        <div id="youtube" data-property="{
-          videoURL: 'https://youtu.be/Y7sd9AIv2SM',
-          containment: '#youtube-wrap',
-          autoPlay: true,
-          loop: 1,
-          mute: true,
-          startAt: 40,
-          stopAt: 62,
-          opacity: 1,
-          showControls: false,
-          showYTLogo: false,
-        }"></div>
-      </div>
+  <div id="hero" class="hero">
+    <div id="youtube-wrap" class="youtube-wrap">
+      <div id="youtube" data-property="{
+        videoURL: 'https://youtu.be/Y7sd9AIv2SM',
+        containment: '#youtube-wrap',
+        autoPlay: true,
+        loop: 1,
+        mute: true,
+        startAt: 40,
+        stopAt: 62,
+        opacity: 1,
+        showControls: false,
+        showYTLogo: false,
+      }"></div>
     </div>
-    <!-- グローバルナビ -->
-    <header id="header" class="header">
-      <button id="button">
-        <div class="button button-trigger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
-      <nav>
-        <ul id="drawer-menu">
-          <li class="drawer-menu__list"><a href="#harehare">HareHare</a></li>
-          <li class="drawer-menu__list"><a href="#release">Release</a></li>
-          <li class="drawer-menu__list"><a href="#information">Information</a></li>
-          <li class="drawer-menu__list"><a href="#member">Member</a></li>
-          <li class="drawer-menu__list"><a href="#social">Social</a></li>
-          <li class="drawer-menu__list"><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+  </div>
+  <!-- グローバルナビ -->
+  <header id="header">
+    <nav>
+      <ul class="header-menu">
+        <li class="header-menu__list"><a href="#harehare">HareHare</a></li>
+        <li class="header-menu__list"><a href="#release">Release</a></li>
+        <li class="header-menu__list"><a href="#information">Information</a></li>
+        <li class="header-menu__list"><a href="#member">Member</a></li>
+        <li class="header-menu__list"><a href="#social">Social</a></li>
+        <li class="header-menu__list"><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="wrap">
     <main>
       <!-- HareHare紹介 -->
       <section id="harehare">
-        <h2>HareHare</h2>
+        <h2 class="sec-title">HareHare</h2>
         <p>楽園音楽を奏でるDr.Tosh/永井利充(ex.ボガンボス)のニューヴィジョン。</p>
         <p>Dr.Tosh & Peace-Kのリズムセクションのラヴグルーヴにメンバーのハッピーオーラを満載してお届けする祝祭の宴。</p>
         <p>メンバーが織り成すその原色音世界は祈りや儀式に近いのかもしれない。</p>
@@ -93,15 +86,15 @@
       </section>
       <!-- リリース情報 -->
       <section id="release">
-        <h2>Release</h2>
+        <h2 class="sec-title">Release</h2>
       </section>
       <!-- 最新情報 -->
       <section id="information">
-        <h2>Information</h2>
+        <h2 class="sec-title">Information</h2>
       </section>
       <!-- メンバー紹介 -->
       <section id="member">
-        <h2>Member</h2>
+        <h2 class="sec-title">Member</h2>
         <div class="member-wrap">
           <figure>
             <img src="https://placehold.jp/300x300.png" alt="">
@@ -146,12 +139,12 @@
       </section>
       <!-- ソーシャル -->
       <section id="social">
-        <h2>Social</h2>
-        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FHare-Hare-2307887862804639%2F&tabs=timeline&width=300&height=300&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=407189686726714" width="300" height="300" style="border:none;overflow:hidden" scrolling="no" allow="encrypted-media"></iframe>
+        <h2 class="sec-title">Social</h2>
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FHare-Hare-2307887862804639%2F&tabs=timeline&width=300&height=485&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=407189686726714" width="300" height="485" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
       </section>
     </main>
     <!-- フッター -->
-    <footer id="contact">Contact</footer>
+    <footer id="contact" class="sec-title">Contact</footer>
   </div>
   <!-- script読み込み -->
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

@@ -12,7 +12,18 @@ $mq-breakpoints: ('xs': 320px,
   }
 }
 
-// //・・・・・・・ 色設定・・・・・・・
+// ・・・・・・・ 色設定・・・・・・・
 @mixin ftcolor($color: #1c1c1c) {
   color: $color;
+}
+
+// ・・・・・・・ フォントサイズ・・・・・・・
+$baseFontsize: 16;
+
+html {
+  font-size: $baseFontsize + px;
+}
+
+@function rem($pixels) {
+  @return $pixels / $baseFontsize * 1rem;
 }

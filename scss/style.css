@@ -1,13 +1,46 @@
 @charset "UTF-8";
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: 'Fira Sans', 'Noto Sans JP', sans-serif;
   background: #ebebeb;
-  background: radial-gradient(circle, #ebebeb 0%, #fafafa 50%, #fcc246 100%);
   color: #1c1c1c;
 }
 
 a {
   color: #1c1c1c;
+}
+
+@media screen and (max-width: 479px) {
+  #wrap {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  #wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+}
+
+.sec-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 40px 0;
+}
+
+@media screen and (min-width: 480px) {
+  .sec-title {
+    font-size: 3.75rem;
+    text-align: center;
+    margin: 80px 0;
+  }
 }
 
 .opening {
@@ -341,13 +374,13 @@ a {
 
 .hero {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
   background-image: url(../../img/sp-hero.jpg);
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .youtube-wrap {
@@ -383,142 +416,50 @@ a {
   }
 }
 
-/******ハンバーガーメニュー（SPのみ）******/
-@media screen and (min-width: 320px) and (max-width: 480px) {
-  /*ハンバーガーボタン オープン時*/
-  #button {
-    position: fixed;
-    top: 2em;
-    right: 2em;
-    z-index: 110;
-  }
-  .button-trigger {
-    position: relative;
-    width: 45px;
-    height: 30px;
-    cursor: pointer;
-  }
-  .button-trigger span {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #4f4e4e;
-    border-radius: 4px;
-  }
-  .button-trigger,
-  .button-trigger span {
-    display: inline-block;
-    transition: all .5s;
-    box-sizing: border-box;
-  }
-  .button-trigger span:nth-of-type(1) {
-    top: 0;
-  }
-  .button-trigger span:nth-of-type(2) {
-    top: 14px;
-  }
-  .button-trigger span:nth-of-type(3) {
-    bottom: 0;
-  }
-  /*ハンバーガーボタン クローズ時*/
-  .button.active::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px solid #4f4e4e;
-    transition: all .7s;
-  }
-  .button.active span:nth-of-type(1) {
-    -webkit-transform: translateY(14px) rotate(45deg);
-    transform: translateY(14px) rotate(45deg);
-  }
-  .button.active span:nth-of-type(2) {
-    left: 60%;
-    opacity: 0;
-    -webkit-animation: active-button-bar02 .8s forwards;
-    animation: active-button-bar02 .8s forwards;
-  }
-  @-webkit-keyframes active-button-bar02 {
-    100% {
-      height: 0;
-    }
-  }
-  @keyframes active-button-bar02 {
-    100% {
-      height: 0;
-    }
-  }
-  .button.active span:nth-of-type(3) {
-    -webkit-transform: translateY(-14px) rotate(-45deg);
-    transform: translateY(-14px) rotate(-45deg);
-  }
-  .button.active::after {
-    border: 2px solid #4f4e4e;
-  }
-  /*ナビメニュー*/
-  #drawer-menu {
-    display: none;
-    width: 100%;
-    height: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #fdbb2d;
-    background: linear-gradient(0deg, #fdbb2d 0%, rgba(255, 246, 226, 0.67458) 100%);
-  }
-  .drawer-menu__list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: calc(100%/6);
-    cursor: pointer;
-  }
-  .drawer-menu__list a {
-    display: inline-block;
-    padding: 16px 8px;
+#header {
+  width: 100%;
+  height: 10vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: radial-gradient(#000 30%, transparent 31%);
+  background-image: radial-gradient(#000 30%, transparent 31%);
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+  box-shadow: 0 32px 30px -30px rgba(53, 47, 47, 0.15);
+}
+
+.header-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
+  height: 10vh;
+  margin: 0 auto;
+}
+
+.header-menu__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  .header-menu__list {
+    width: calc(100% / 3);
   }
 }
 
-/*******PC時グローバルナビ*******/
-@media screen and (min-width: 481px) {
-  .header {
-    position: sticky;
-    top: 0;
-    left: 0;
-  }
-  #button {
-    display: none;
-  }
-  .header-nav {
-    display: block;
-    width: 100%;
-    height: 80px;
-  }
-  .header-nav__list {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 800px;
-    height: 80px;
-  }
-  .header-nav__list li a {
-    display: block;
-    padding: .5em;
-    transition: .3s;
-    transform: scale(1);
-    color: #1c1c1c;
-  }
-  .header-nav__list li a:hover {
-    transform: scale(1.2);
-  }
+.header-menu__list a {
+  display: block;
+  padding: .5em;
+  transition: .3s;
+  transform: scale(1);
+  color: #ebebeb;
+}
+
+.header-menu__list a:hover {
+  transform: scale(1.4);
 }
