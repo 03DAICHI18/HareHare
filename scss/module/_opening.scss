@@ -9,7 +9,7 @@
   z-index: 9999;
   font-family: 'Changa One', cursive;
   font-weight: bold;
-  background: #333;
+  background: #fcfcfc;
 }
 
 .opening-wrap {
@@ -54,23 +54,19 @@
 
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #d29a89;
   }
 
   40% {
     transform: rotate(6deg) translateX(-40%);
-    // background-color: #3d9abc;
   }
 
   60% {
     transform: rotate(8deg) translateX(-50%);
-    // background-color: #7c3dbc;
   }
 
   80% {
     transform: rotate(10deg) translateX(-50%);
     opacity: 1;
-    // background-color: #bd2131;
   }
 
   100% {
@@ -87,23 +83,19 @@
 
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #d29a89;
   }
 
   40% {
     transform: rotate(6deg) translateX(-40%);
-    // background-color: #3d9abc;
   }
 
   60% {
     transform: rotate(8deg) translateX(-50%);
-    // background-color: #7c3dbc;
   }
 
   80% {
     transform: rotate(10deg) translateX(-50%);
     opacity: 1;
-    // background-color: #bd2131;
   }
 
   100% {
@@ -120,23 +112,20 @@
 
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #d29a89;
   }
 
   40% {
     transform: rotate(-6deg) translateX(40%);
-    // background-color: #3d9abc;
   }
 
   60% {
     transform: rotate(-8deg) translateX(50%);
-    // background-color: #7c3dbc;
   }
 
   80% {
     transform: rotate(-10deg) translateX(50%);
     opacity: 1;
-    // background-color: #bd2131;
+
   }
 
   100% {
@@ -153,23 +142,19 @@
 
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #d29a89;
   }
 
   40% {
     transform: rotate(-6deg) translateX(40%);
-    // background-color: #3d9abc;
   }
 
   60% {
     transform: rotate(-8deg) translateX(50%);
-    // background-color: #7c3dbc;
   }
 
   80% {
     transform: rotate(-10deg) translateX(50%);
     opacity: 1;
-    // background-color: #bd2131;
   }
 
   100% {
@@ -201,57 +186,61 @@
   }
 }
 
+.opening-title span {
+  color: rgb(211, 104, 54);
+}
+
 .opening-title span:nth-of-type(1) {
-  color: rgb(173, 31, 50);
+  // color: rgb(173, 31, 50);
   display: inline-block;
   -webkit-animation: bounce 2.2s both 2s;
   animation: bounce 2.2s both 2s;
 }
 
 .opening-title span:nth-of-type(2) {
-  color: rgb(153, 29, 165);
+  // color: rgb(153, 29, 165);
   display: inline-block;
   -webkit-animation: bounce 2s both 2s;
   animation: bounce 2s both 2s;
 }
 
 .opening-title span:nth-of-type(3) {
-  color: rgb(31, 71, 173);
+  // color: rgb(31, 71, 173);
   display: inline-block;
   -webkit-animation: bounce 1.4s both 2s;
   animation: bounce 1.4s both 2s;
 }
 
 .opening-title span:nth-of-type(4) {
-  color: rgb(37, 172, 212);
+  // color: rgb(37, 172, 212);
   display: inline-block;
   -webkit-animation: bounce 2.2s both 2s;
   animation: bounce 2.2s both 2s;
 }
 
 .opening-title span:nth-of-type(5) {
-  color: rgb(38, 217, 68);
+  // color: rgb(38, 217, 68);
   display: inline-block;
   -webkit-animation: bounce 1.6s both 2s;
   animation: bounce 1.6s both 2s;
 }
 
 .opening-title span:nth-of-type(6) {
-  color: rgb(214, 217, 38);
+  // color: rgb(214, 217, 38);
   display: inline-block;
   -webkit-animation: bounce 2.5s both 2s;
   animation: bounce 2.5s both 2s;
 }
 
 .opening-title span:nth-of-type(7) {
-  color: rgb(217, 160, 38);
+  // color: rgb(217, 160, 38);
   display: inline-block;
   -webkit-animation: bounce 1.8s both 2s;
   animation: bounce 1.8s both 2s;
 }
 
 .opening-title span:nth-of-type(8) {
-  color: rgb(213, 63, 43);
+  // color: rgb(213, 63, 43);
   display: inline-block;
   -webkit-animation: bounce 1.9s both 2s;
   animation: bounce 1.9s both 2s;
@@ -259,7 +248,7 @@
 
 @-webkit-keyframes bounce {
   0% {
-    transform: translateY(-50vh);
+    transform: translateY(-40vh);
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
     opacity: 0;
@@ -313,7 +302,7 @@
 
 @keyframes bounce {
   0% {
-    transform: translateY(-50vh);
+    transform: translateY(-40vh);
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
     opacity: 0;

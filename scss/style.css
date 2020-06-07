@@ -18,6 +18,7 @@ a {
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
+    overflow-x: hidden;
   }
 }
 
@@ -35,11 +36,149 @@ a {
   margin: 40px 0;
 }
 
-@media screen and (min-width: 480px) {
+.sec-title__left {
+  position: relative;
+}
+
+.sec-title__right {
+  position: relative;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /******* SPセクションタイトル背景スクロールイン ******/
+  /* スクロール前 */
+  .sec-title__left::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -20px;
+    left: 480px;
+    width: 120%;
+    height: 80px;
+    margin: 0 -16px;
+    transform: rotate(5deg);
+    z-index: -1;
+    transition: all .3s ease-in;
+  }
+  /* スクロールイン後 */
+  .sec-title__left.fadeIn::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    width: 120%;
+    height: 80px;
+    margin: 0 -16px;
+    transform: rotate(5deg);
+    z-index: -1;
+  }
+  /* スクロール前 */
+  .sec-title__right::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -20px;
+    right: 480px;
+    width: 120%;
+    height: 80px;
+    margin: 0 -16px;
+    transform: rotate(-5deg);
+    z-index: -1;
+    transition: all .3s ease-in;
+  }
+  /* スクロールイン後 */
+  .sec-title__right.fadeIn::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    width: 120%;
+    height: 80px;
+    margin: 0 -16px;
+    transform: rotate(-5deg);
+    z-index: -1;
+  }
+}
+
+/******* タブレット以上セクションタイトル背景スクロールイン ******/
+@media screen and (min-width: 481px) {
   .sec-title {
     font-size: 3.75rem;
+    margin: 160px 0 40px;
+  }
+  .sec-title__left {
+    text-align: left;
+    padding-left: 10%;
+    position: relative;
+  }
+  .sec-title__right {
+    text-align: right;
+    padding-right: 10%;
+    position: relative;
+  }
+  /* スクロール前 */
+  .sec-title__left::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    left: -100%;
+    z-index: -1;
+    transition: all .7s ease-in;
+  }
+  /* スクロールイン後 */
+  .sec-title__left.fadeIn::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    border-style: solid;
+    border-width: 0 0 100px 80vw;
+    border-color: transparent transparent #ebebeb transparent;
+    width: 0;
+    height: 0;
+    margin: 0 -32px;
+    z-index: -1;
+  }
+  /* スクロール前 */
+  .sec-title__right::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    right: -100%;
+    z-index: -1;
+    transition: all .7s ease-in;
+  }
+  /* スクロールイン後 */
+  .sec-title__right.fadeIn::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    border-style: solid;
+    border-width: 100px 0 0 80vw;
+    border-color: transparent transparent transparent #ebebeb;
+    width: 0;
+    height: 0;
+    margin: 0 -32px;
+    z-index: -1;
+  }
+}
+
+.mid-title {
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 40px 0;
+}
+
+@media screen and (min-width: 480px) {
+  .mid-title {
+    font-size: 1.875rem;
     text-align: center;
-    margin: 80px 0;
+    margin: 60px 0;
   }
 }
 
@@ -54,7 +193,7 @@ a {
   z-index: 9999;
   font-family: 'Changa One', cursive;
   font-weight: bold;
-  background: #333;
+  background: #fcfcfc;
 }
 
 .opening-wrap {
@@ -98,7 +237,6 @@ a {
   }
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #d29a89;
   }
   40% {
     transform: rotate(6deg) translateX(-40%);
@@ -123,7 +261,6 @@ a {
   }
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #d29a89;
   }
   40% {
     transform: rotate(6deg) translateX(-40%);
@@ -148,7 +285,6 @@ a {
   }
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #d29a89;
   }
   40% {
     transform: rotate(-6deg) translateX(40%);
@@ -173,7 +309,6 @@ a {
   }
   20% {
     transform: rotate(0deg) translateX(0%);
-    background-color: #d29a89;
   }
   40% {
     transform: rotate(-6deg) translateX(40%);
@@ -210,69 +345,65 @@ a {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .opening-title {
     font-size: 5rem;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .opening-title {
     font-size: 6rem;
   }
 }
 
+.opening-title span {
+  color: #d36836;
+}
+
 .opening-title span:nth-of-type(1) {
-  color: #ad1f32;
   display: inline-block;
   -webkit-animation: bounce 2.2s both 2s;
   animation: bounce 2.2s both 2s;
 }
 
 .opening-title span:nth-of-type(2) {
-  color: #991da5;
   display: inline-block;
   -webkit-animation: bounce 2s both 2s;
   animation: bounce 2s both 2s;
 }
 
 .opening-title span:nth-of-type(3) {
-  color: #1f47ad;
   display: inline-block;
   -webkit-animation: bounce 1.4s both 2s;
   animation: bounce 1.4s both 2s;
 }
 
 .opening-title span:nth-of-type(4) {
-  color: #25acd4;
   display: inline-block;
   -webkit-animation: bounce 2.2s both 2s;
   animation: bounce 2.2s both 2s;
 }
 
 .opening-title span:nth-of-type(5) {
-  color: #26d944;
   display: inline-block;
   -webkit-animation: bounce 1.6s both 2s;
   animation: bounce 1.6s both 2s;
 }
 
 .opening-title span:nth-of-type(6) {
-  color: #d6d926;
   display: inline-block;
   -webkit-animation: bounce 2.5s both 2s;
   animation: bounce 2.5s both 2s;
 }
 
 .opening-title span:nth-of-type(7) {
-  color: #d9a026;
   display: inline-block;
   -webkit-animation: bounce 1.8s both 2s;
   animation: bounce 1.8s both 2s;
 }
 
 .opening-title span:nth-of-type(8) {
-  color: #d53f2b;
   display: inline-block;
   -webkit-animation: bounce 1.9s both 2s;
   animation: bounce 1.9s both 2s;
@@ -280,7 +411,7 @@ a {
 
 @-webkit-keyframes bounce {
   0% {
-    transform: translateY(-50vh);
+    transform: translateY(-40vh);
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
     opacity: 0;
@@ -327,7 +458,7 @@ a {
 
 @keyframes bounce {
   0% {
-    transform: translateY(-50vh);
+    transform: translateY(-40vh);
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
     opacity: 0;
@@ -377,7 +508,7 @@ a {
   height: 50vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
-  background-image: url(../../img/sp-hero.jpg);
+  background-image: url(./../../img/sp-hero.jpg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -462,4 +593,13 @@ a {
 
 .header-menu__list a:hover {
   transform: scale(1.4);
+}
+
+.release-img {
+  width: 100%;
+}
+
+.release-img img {
+  width: 100%;
+  height: 100%;
 }

@@ -4,10 +4,158 @@
   margin: 40px 0;
 }
 
-@include mq(sp) {
+.sec-title__left {
+  position: relative;
+}
+
+.sec-title__right {
+  position: relative;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  /******* SPセクションタイトル背景スクロールイン ******/
+  /* スクロール前 */
+  .sec-title__left::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -20px;
+    left: 480px;
+    width: 120%;
+    height: 80px;
+    margin: 0 -16px;
+    transform: rotate(5deg);
+    z-index: -1;
+    transition: all .3s ease-in;
+  }
+
+  /* スクロールイン後 */
+  .sec-title__left.fadeIn::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    width: 120%;
+    height: 80px;
+    margin: 0 -16px;
+    transform: rotate(5deg);
+    z-index: -1;
+  }
+
+  /* スクロール前 */
+  .sec-title__right::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -20px;
+    right: 480px;
+    width: 120%;
+    height: 80px;
+    margin: 0 -16px;
+    transform: rotate(-5deg);
+    z-index: -1;
+    transition: all .3s ease-in;
+  }
+
+  /* スクロールイン後 */
+  .sec-title__right.fadeIn::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    width: 120%;
+    height: 80px;
+    margin: 0 -16px;
+    transform: rotate(-5deg);
+    z-index: -1;
+  }
+}
+
+/******* タブレット以上セクションタイトル背景スクロールイン ******/
+@media screen and (min-width: 481px) {
   .sec-title {
     font-size: rem(60);
+    margin: 160px 0 40px;
+  }
+
+  .sec-title__left {
+    text-align: left;
+    padding-left: 10%;
+    position: relative;
+  }
+
+  .sec-title__right {
+    text-align: right;
+    padding-right: 10%;
+    position: relative;
+  }
+
+  /* スクロール前 */
+  .sec-title__left::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    left: -100%;
+    z-index: -1;
+    transition: all .7s ease-in;
+  }
+
+  /* スクロールイン後 */
+  .sec-title__left.fadeIn::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    border-style: solid;
+    border-width: 0 0 100px 80vw;
+    border-color: transparent transparent #ebebeb transparent;
+    width: 0;
+    height: 0;
+    margin: 0 -32px;
+    z-index: -1;
+  }
+
+  /* スクロール前 */
+  .sec-title__right::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    right: -100%;
+    z-index: -1;
+    transition: all .7s ease-in;
+  }
+
+  /* スクロールイン後 */
+  .sec-title__right.fadeIn::before {
+    content: '';
+    background: #ffe058;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    border-style: solid;
+    border-width: 100px 0 0 80vw;
+    border-color: transparent transparent transparent #ebebeb;
+    width: 0;
+    height: 0;
+    margin: 0 -32px;
+    z-index: -1;
+  }
+}
+
+.mid-title {
+  font-size: rem(20);
+  text-align: center;
+  margin: 40px 0;
+}
+
+@include mq(sp) {
+  .mid-title {
+    font-size: rem(30);
     text-align: center;
-    margin: 80px 0;
+    margin: 60px 0;
   }
 }

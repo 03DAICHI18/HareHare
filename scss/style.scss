@@ -2,9 +2,10 @@
 @import "mixin/mixin";
 @import "base/base";
 
-@import "commom/common";
+@import "./commom/common";
 
 @import "module/opening";
 @import "module/hero";
 @import "module/header";
 @import "module/harehare";
+@import "module/release";
