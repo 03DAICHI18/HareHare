@@ -1,15 +1,10 @@
 #header {
   width: 100%;
   height: 10vh;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  background-image: radial-gradient(#000 30%, transparent 31%);
-  background-image: radial-gradient(#000 30%, transparent 31%);
-  background-size: 4px 4px;
-  background-position: 0 0, 2px 2px;
-  box-shadow: 0 32px 30px -30px rgba(53, 47, 47, 0.15);
+  z-index: 100;
 }
 
 .header-menu {
@@ -28,18 +23,21 @@
   align-items: center;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 479px) {
   .header-menu__list {
     width: calc(100% / 3);
+    z-index: 100;
   }
 }
 
 .header-menu__list a {
   display: block;
   padding: .5em;
-  transition: .3s;
-  transform: scale(1);
+  font-size: rem(18);
   color: #ebebeb;
+  text-shadow: 1px 1px 5px;
+  transform: scale(1);
+  transition: .3s;
 }
 
 .header-menu__list a:hover {

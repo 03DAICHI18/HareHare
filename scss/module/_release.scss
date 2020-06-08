@@ -1,8 +1,11 @@
-.release-img {
-  width: 100%;
-}
+@include mq(sp) {
+  .release-img {
+    width: 100%;
+  }
 
-.release-img img {
-  width: 100%;
-  height: 100%;
+  .release-img img {
+    width: 100%;
+    height: 100%;
+  }
+
 }

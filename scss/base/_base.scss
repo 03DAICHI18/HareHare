@@ -2,11 +2,13 @@ body {
   font-family: 'Fira Sans', 'Noto Sans JP', sans-serif;
   background: #ebebeb;
   color: #1c1c1c;
+  letter-spacing: 0.05em;
 }
 
 a {
   color: #1c1c1c;
 }
+
 
 @media screen and (max-width: 479px) {
   #wrap {
@@ -15,6 +17,10 @@ a {
     padding: 0 16px;
     overflow-x: hidden;
   }
+
+  p {
+    line-height: 1.5em;
+  }
 }
 
 @include mq(sp) {
@@ -22,5 +28,9 @@ a {
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 32px;
+  }
+
+  p {
+    line-height: 1.75em;
   }
 }

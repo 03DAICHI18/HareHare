@@ -27,6 +27,21 @@ $(function () {
         $(this).addClass("fadeIn");
       }
     });
+
+    // ・・・・・・・・・・・ヘッダー文字色変化・・・・・・・・・・・・・・・・
+    var Header = $('.header-menu__list a');
+    var harehare = $('#harehare');
+    //ウィンドウ枠からのharehare位置を取得
+    var harehareTop = harehare.offset().top;
+    // ウィンドウ枠からのスクロール量を取得
+    var winTop = $(this).scrollTop();
+    //harehareがウィンドウ枠より上にきたら文字色を黒に
+    if (winTop >= harehareTop - 180) {
+      Header.css('color', '#1c1c1c');
+      //harehareがウィンドウ枠より下であれば文字色は白に
+    } else if (winTop <= harehareTop) {
+      Header.css('color', '#ebebeb');
+    }
   });
 
 });
