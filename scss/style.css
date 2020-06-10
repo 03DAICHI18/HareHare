@@ -8,6 +8,7 @@ body {
   background: #ebebeb;
   color: #1c1c1c;
   letter-spacing: 0.05em;
+  counter-reset: number 0;
 }
 
 a {
@@ -37,6 +38,7 @@ a {
   }
 }
 
+/********** 以下、h1 **********/
 @media (min-width: 320px) and (max-width: 479px) {
   .site-title {
     height: 50vh;
@@ -66,6 +68,7 @@ a {
   }
 }
 
+/********** 以下、h2 **********/
 .sec-title {
   font-size: 2.5rem;
   text-align: center;
@@ -204,17 +207,17 @@ a {
   }
 }
 
+/********** 以下、h3 **********/
 .mid-title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   text-align: center;
-  margin: 40px 0;
+  line-height: 1.5em;
+  margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 480px) {
+@media (min-width: 700px) {
   .mid-title {
-    font-size: 1.875rem;
-    text-align: center;
-    margin: 60px 0;
+    font-size: 1.375rem;
   }
 }
 
@@ -629,12 +632,54 @@ a {
   transform: scale(1.4);
 }
 
-@media screen and (min-width: 480px) {
+.release__wrapper {
+  display: flex;
+  max-width: 62.5rem;
+  margin: 0 auto;
+}
+
+/* 以下、ジャケット写真 */
+.release-img {
+  width: 18.75rem;
+  margin: 0 auto;
+}
+
+.release-img img {
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
   .release-img {
-    width: 100%;
+    width: 80%;
+    max-width: 25rem;
   }
   .release-img img {
     width: 100%;
-    height: 100%;
   }
+}
+
+/* 以下、ジャケット紹介 */
+.release__wrapper--right {
+  width: 100%;
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .release__wrapper--right {
+    width: 100%;
+    max-width: 18.75rem;
+  }
+}
+
+.release__number {
+  padding: 0.5rem;
+}
+
+.release__number::before {
+  counter-increment: number 1;
+  content: counter(number) " ";
 }

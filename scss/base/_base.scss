@@ -3,6 +3,7 @@ body {
   background: #ebebeb;
   color: #1c1c1c;
   letter-spacing: 0.05em;
+  counter-reset: number 0;
 }
 
 a {

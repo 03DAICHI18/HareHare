@@ -1,11 +1,52 @@
-@include mq(sp) {
+.release__wrapper {
+  display: flex;
+  max-width: rem(1000);
+  margin: 0 auto;
+}
+
+/* 以下、ジャケット写真 */
+.release-img {
+  width: rem(300);
+  margin: 0 auto;
+}
+
+.release-img img {
+  width: 100%;
+}
+
+@include mq(tab) {
   .release-img {
-    width: 100%;
+    width: 80%;
+    max-width: rem(400);
   }
 
   .release-img img {
     width: 100%;
-    height: 100%;
   }
+}
 
+/* 以下、ジャケット紹介 */
+.release__wrapper--right {
+  width: 100%;
+  max-width: rem(400);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width:600px) and (max-width:768px) {
+  .release__wrapper--right {
+    width: 100%;
+    max-width: rem(300);
+  }
+}
+
+.release__number {
+  padding: rem(8);
+}
+
+.release__number::before {
+  counter-increment: number 1;
+  content: counter(number) " ";
 }

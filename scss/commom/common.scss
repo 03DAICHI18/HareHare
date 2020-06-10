@@ -1,3 +1,4 @@
+/********** 以下、h1 **********/
 @media (min-width: 320px) and (max-width: 479px) {
   .site-title {
     height: 50vh;
@@ -27,6 +28,7 @@
   }
 }
 
+/********** 以下、h2 **********/
 .sec-title {
   font-size: rem(40);
   text-align: center;
@@ -175,16 +177,16 @@
   }
 }
 
+/********** 以下、h3 **********/
 .mid-title {
-  font-size: rem(20);
+  font-size: rem(18);
   text-align: center;
-  margin: 40px 0;
+  line-height: 1.5em;
+  margin-bottom: rem(16);
 }
 
-@include mq(sp) {
+@media (min-width:700px) {
   .mid-title {
-    font-size: rem(30);
-    text-align: center;
-    margin: 60px 0;
+    font-size: rem(22);
   }
 }
