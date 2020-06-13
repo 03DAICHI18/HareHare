@@ -1,22 +1,90 @@
 /********** 以下、h1 **********/
+// SPサイズ
 @media (min-width: 320px) and (max-width: 479px) {
   .site-title {
     height: 50vh;
     position: absolute;
-    bottom: rem(56);
+    bottom: rem(24);
     right: 0px;
-    padding: rem(16);
   }
 
   .site-title__text {
+    width: 320px;
+    text-align: center;
+    position: relative;
     font-size: rem(28);
     font-weight: bold;
-    color: #ff8800;
-    text-shadow: 1px 1px 3px;
+    color: #dddada;
+    text-shadow: 0 1px 0 #333, 0 2px 0 #333, 0 3px 0 #333, 0 4px 0 #333, 0 5px 0 #333, 0 6px 0 #333, 0 7px 0 #333, 0 8px 0 #333, 0 9px 0 #333, 0 50px 30px rgba(0, 0, 0, 0.3);
+    -webkit-animation: fadein 4s 1s forwards;
+    animation: fadein 4s 1s forwards;
+    opacity: 0;
   }
 
+  @-webkit-keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* テキストをなぞるように色がつくアニメーション */
+  .site-title__text::before {
+    content: attr(data-txt);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffe058;
+    clip: rect(0, 0, 0, 0);
+    transition: clip 1.5s linear;
+    -webkit-animation: fadein 4s 3s forwards;
+    animation: textin 4s 3s forwards;
+  }
+
+  @-webkit-keyframes textin {
+    0% {
+      clip: rect(0, 0, 0, 0);
+    }
+
+    100% {
+      clip: rect(0, 320px, 30px, 0);
+    }
+  }
+
+  @keyframes textin {
+    0% {
+      clip: rect(0, 0, 0, 0);
+    }
+
+    100% {
+      clip: rect(0, 320px, 30px, 0);
+    }
+  }
 }
 
+// SP〜Tabサイズ
 @media screen and (min-width: 480px) {
   .site-title {
     position: absolute;
@@ -70,10 +138,6 @@
   }
 
   /* テキストをなぞるように色がつくアニメーション */
-  h1[data-txt="HareHare Official Site"] {
-    height: 50px;
-  }
-
   .site-title__text::before {
     content: attr(data-txt);
     width: 100%;
@@ -108,6 +172,7 @@
   }
 }
 
+// Tab〜サイズ
 @media screen and (min-width: 600px) {
   .site-title__text {
     width: 600px;
@@ -139,7 +204,7 @@
 .sec-title {
   font-size: rem(40);
   text-align: center;
-  margin: 40px 0;
+  margin: rem(80) 0 rem(16);
 }
 
 .sec-title__left {
@@ -150,139 +215,78 @@
   position: relative;
 }
 
-@media (min-width: 320px) and (max-width: 479px) {
-
-  /******* SPセクションタイトル背景スクロールイン ******/
-  /* スクロール前 */
-  .sec-title__left::before {
-    content: '';
-    background: #ffe058;
-    position: absolute;
-    top: -20px;
-    left: 480px;
-    width: 120%;
-    height: 80px;
-    margin: 0 -16px;
-    transform: rotate(5deg);
-    z-index: -1;
-    transition: all .3s ease-in;
-  }
-
-  /* スクロールイン後 */
-  .sec-title__left.fadeIn::before {
-    content: '';
-    background: #ffe058;
-    position: absolute;
-    top: -20px;
-    left: -10px;
-    width: 120%;
-    height: 80px;
-    margin: 0 -16px;
-    transform: rotate(5deg);
-    z-index: -1;
-  }
-
-  /* スクロール前 */
-  .sec-title__right::before {
-    content: '';
-    background: #ffe058;
-    position: absolute;
-    top: -20px;
-    right: 480px;
-    width: 120%;
-    height: 80px;
-    margin: 0 -16px;
-    transform: rotate(-5deg);
-    z-index: -1;
-    transition: all .3s ease-in;
-  }
-
-  /* スクロールイン後 */
-  .sec-title__right.fadeIn::before {
-    content: '';
-    background: #ffe058;
-    position: absolute;
-    top: -20px;
-    right: -10px;
-    width: 120%;
-    height: 80px;
-    margin: 0 -16px;
-    transform: rotate(-5deg);
-    z-index: -1;
-  }
-}
-
-/******* タブレット以上セクションタイトル背景スクロールイン ******/
+/******* タイトル背景スクロールイン ******/
 @media screen and (min-width: 480px) {
   .sec-title {
     font-size: rem(60);
     margin: 120px 0 40px;
   }
-
-  .sec-title__left {
-    text-align: left;
-    padding-left: 10%;
-    position: relative;
-  }
-
-  .sec-title__right {
-    text-align: right;
-    padding-right: 10%;
-    position: relative;
-  }
-
-  /* スクロール前 */
-  .sec-title__left::before {
-    content: '';
-    background: #ffe058;
-    position: absolute;
-    left: -100%;
-    z-index: -1;
-    transition: all .7s ease-in;
-  }
-
-  /* スクロールイン後 */
-  .sec-title__left.fadeIn::before {
-    content: '';
-    background: #ffe058;
-    position: absolute;
-    top: -40px;
-    left: 0;
-    border-style: solid;
-    border-width: 0 0 100px 80vw;
-    border-color: transparent transparent #ebebeb transparent;
-    width: 0;
-    height: 0;
-    margin: 0 -32px;
-    z-index: -1;
-  }
-
-  /* スクロール前 */
-  .sec-title__right::before {
-    content: '';
-    background: #ffe058;
-    position: absolute;
-    right: -100%;
-    z-index: -1;
-    transition: all .7s ease-in;
-  }
-
-  /* スクロールイン後 */
-  .sec-title__right.fadeIn::before {
-    content: '';
-    background: #ffe058;
-    position: absolute;
-    top: -40px;
-    right: 0;
-    border-style: solid;
-    border-width: 100px 0 0 80vw;
-    border-color: transparent transparent transparent #ebebeb;
-    width: 0;
-    height: 0;
-    margin: 0 -32px;
-    z-index: -1;
-  }
 }
+
+.sec-title__left {
+  text-align: left;
+  padding-left: 10%;
+  position: relative;
+}
+
+.sec-title__right {
+  text-align: right;
+  padding-right: 10%;
+  position: relative;
+}
+
+/* スクロール前 */
+.sec-title__left::before {
+  content: '';
+  background: #ffe058;
+  position: absolute;
+  left: -100%;
+  z-index: -1;
+  transition: all .7s ease-in;
+}
+
+/* スクロールイン後 */
+.sec-title__left.fadeIn::before {
+  content: '';
+  background: #ffe058;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  border-style: solid;
+  border-width: 0 0 100px 80vw;
+  border-color: transparent transparent #ebebeb transparent;
+  width: 0;
+  height: 0;
+  margin: 0 -32px;
+  z-index: -1;
+}
+
+/* スクロール前 */
+.sec-title__right::before {
+  content: '';
+  background: #ffe058;
+  position: absolute;
+  right: -100%;
+  z-index: -1;
+  transition: all .7s ease-in;
+}
+
+/* スクロールイン後 */
+.sec-title__right.fadeIn::before {
+  content: '';
+  background: #ffe058;
+  position: absolute;
+  top: -40px;
+  right: 0;
+  border-style: solid;
+  border-width: 100px 0 0 80vw;
+  border-color: transparent transparent transparent #ebebeb;
+  width: 0;
+  height: 0;
+  margin: 0 -32px;
+  z-index: -1;
+}
+
 
 /********** 以下、h3 **********/
 .mid-title {
@@ -292,9 +296,9 @@
   margin-bottom: rem(16);
 }
 
-@media (min-width:700px) {
+@media (min-width:600px) {
   .mid-title {
-    font-size: rem(22);
+    font-size: rem(20);
   }
 }
 

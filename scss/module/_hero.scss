@@ -3,7 +3,7 @@
   height: 50vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
-  background-image: url(./../../img/sp-hero.jpg);
+  background: linear-gradient(0deg, rgba(235, 235, 235, 1) 0%, rgba(246, 178, 101, 0.20223468660968658) 50%, rgba(255, 135, 0, 0.19938568376068377) 100%), url(./../../img/sp-hero.jpg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
