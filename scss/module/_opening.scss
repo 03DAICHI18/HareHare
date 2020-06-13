@@ -1,169 +1,3 @@
-.opening {
-  width: 100vw;
-  height: 100vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  font-family: 'Changa One', cursive;
-  font-weight: bold;
-  background: #fcfcfc;
-}
-
-.opening-wrap {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-/*********以下、カーテンアニメーション**********/
-.opening-curtain::before,
-.opening-curtain::after {
-  position: fixed;
-  z-index: 1;
-  top: -15%;
-  display: block;
-  visibility: hidden;
-  width: 50%;
-  height: 130%;
-  content: '';
-  background-color: #e2421a;
-}
-
-.opening-curtain::before {
-  left: 0;
-  animation: curtain_left 3s;
-  -webkit-animation: curtain_left 3s;
-}
-
-.opening-curtain::after {
-  right: 0;
-  animation: curtain_right 3s;
-  -webkit-animation: curtain_right 3s;
-}
-
-@-webkit-keyframes curtain_left {
-  0% {
-    visibility: visible;
-  }
-
-  20% {
-    transform: rotate(0deg) translateX(0%);
-  }
-
-  40% {
-    transform: rotate(6deg) translateX(-40%);
-  }
-
-  60% {
-    transform: rotate(8deg) translateX(-50%);
-  }
-
-  80% {
-    transform: rotate(10deg) translateX(-50%);
-    opacity: 1;
-  }
-
-  100% {
-    transform: rotate(0deg) translateX(-100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes curtain_left {
-  0% {
-    visibility: visible;
-  }
-
-  20% {
-    transform: rotate(0deg) translateX(0%);
-  }
-
-  40% {
-    transform: rotate(6deg) translateX(-40%);
-  }
-
-  60% {
-    transform: rotate(8deg) translateX(-50%);
-  }
-
-  80% {
-    transform: rotate(10deg) translateX(-50%);
-    opacity: 1;
-  }
-
-  100% {
-    transform: rotate(0deg) translateX(-100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@-webkit-keyframes curtain_right {
-  0% {
-    visibility: visible;
-  }
-
-  20% {
-    transform: rotate(0deg) translateX(0%);
-  }
-
-  40% {
-    transform: rotate(-6deg) translateX(40%);
-  }
-
-  60% {
-    transform: rotate(-8deg) translateX(50%);
-  }
-
-  80% {
-    transform: rotate(-10deg) translateX(50%);
-    opacity: 1;
-
-  }
-
-  100% {
-    transform: rotate(0deg) translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes curtain_right {
-  0% {
-    visibility: visible;
-  }
-
-  20% {
-    transform: rotate(0deg) translateX(0%);
-  }
-
-  40% {
-    transform: rotate(-6deg) translateX(40%);
-  }
-
-  60% {
-    transform: rotate(-8deg) translateX(50%);
-  }
-
-  80% {
-    transform: rotate(-10deg) translateX(50%);
-    opacity: 1;
-  }
-
-  100% {
-    transform: rotate(0deg) translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 /**********以下、タイトルアニメーション**********/
 .opening-title {
   font-size: 2rem;
@@ -178,7 +12,7 @@
   }
 
   @include mq(tab) {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   @include mq(pc) {
@@ -187,7 +21,9 @@
 }
 
 .opening-title span {
-  color: rgb(211, 104, 54);
+  color: #d36836;
+  font-family: 'Changa One', cursive;
+  font-weight: bold;
 }
 
 .opening-title span:nth-of-type(1) {

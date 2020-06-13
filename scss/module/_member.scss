@@ -1,0 +1,81 @@
+.member-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.member-thumbnail {
+  position: relative;
+  width: 50%;
+  height: auto;
+  padding-top: 50%;
+  outline: 1px solid #111;
+  overflow: hidden;
+}
+
+@include mq(tab) {
+  .member-thumbnail {
+    height: rem(300);
+  }
+}
+
+.member-thumbnail::before {
+  content: "";
+  display: block;
+  padding-top: 50%;
+}
+
+.member-thumbnail img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+  cursor: pointer;
+  filter: grayscale(90%);
+  transition-duration: 0.3s;
+}
+
+
+.member-thumbnail img:hover {
+  filter: grayscale(0);
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+}
+
+@include mq(tab) {
+  .member-thumbnail {
+    width: calc(100% / 3);
+    padding-top: calc(100% / 3);
+  }
+}
+
+figcaption {
+  width: 100%;
+  height: rem(32);
+  line-height: rem(32);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: rem(14);
+  color: #ebebeb;
+  background-color: rgba($color: #000000, $alpha: .5);
+}
+
+@include mq(tab) {
+  figcaption {
+    width: 100%;
+    height: rem(32);
+    line-height: rem(32);
+    padding-left: rem(16);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: rem(14);
+    color: #ebebeb;
+    background-color: rgba($color: #000000, $alpha: .5);
+  }
+
+}

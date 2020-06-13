@@ -4,10 +4,22 @@ body {
   color: #1c1c1c;
   letter-spacing: 0.05em;
   counter-reset: number 0;
+  animation: fadein 5s forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
 
 a {
   color: #1c1c1c;
+  text-decoration: underline;
 }
 
 

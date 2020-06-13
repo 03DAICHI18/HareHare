@@ -1,0 +1,36 @@
+.information-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: rem(32) rem(16);
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.information-list__date {
+  width: 100%;
+  padding-bottom: rem(8);
+}
+
+.information-list__about {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+@include mq(tab) {
+  .information-list {
+    display: flex;
+    flex-direction: row;
+    max-width: rem(800);
+    margin: 0 auto;
+    padding: rem(32) rem(16);
+  }
+
+  .information-list__date {
+    width: 200px;
+  }
+
+  .information-list__about {
+    width: calc(100% - 200px);
+    word-wrap: break-word;
+  }
+}

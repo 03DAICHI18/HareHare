@@ -1,6 +1,6 @@
 $(function () {
   // ・・・・・・・・・・・・・・・・・・ページ内スムーススクロール・・・・・・・・・・・・・・・・・・
-  $('a[href^="#"]').click(function (event) {
+  $('a[href^="#"]').click(function () {
     // クリックした要素のhref属性の値を取得
     var anchor = $(this).attr("href");
     // 表示位置を取得
