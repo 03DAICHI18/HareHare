@@ -1,109 +1,182 @@
 @import "../mixin/mixin";
 
-/******* SPセクションタイトル背景 ******/
-@media (min-width: 320px) and (max-width: 479px) {
-  .sec-title {
-    margin: 120px 0 40px;
+/******* 下層ページh1 ********/
+@media screen and (max-width: 479px) {
+  .bottom-title {
+    width: 100%;
   }
 
-  .sec-title__right::before {
-    content: '';
-    background: #ffe058;
+  .bottom-title__text {
+    margin: rem(40) auto;
+  }
+
+  .bottom-title__text::before {
+    animation: textin 4s 1s forwards;
+  }
+}
+
+@include mq(sp) {
+  .bottom-title {
+    width: 100%;
+    padding: rem(80);
+  }
+
+  .bottom-title__text {
     position: absolute;
-    top: -20px;
-    right: -10px;
-    width: 120%;
-    height: 80px;
-    margin: 0 -16px;
-    transform: rotate(-5deg);
-    z-index: -1;
+    top: 12vh;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
-/******* タブレット以上セクションタイトル背景 ******/
-@media screen and (min-width: 480px) {
-  .sec-title {
-    margin-top: 160px;
-  }
-
-  .sec-title__right::before {
-    content: '';
-    background: #ffe058;
-    position: absolute;
-    top: -40px;
-    right: 0;
-    border-style: solid;
-    border-width: 100px 0 0 80vw;
-    border-color: transparent transparent transparent #ebebeb;
-    width: 0;
-    height: 0;
-    margin: 0 -32px;
-    z-index: -1;
-  }
-}
-
-
-/******* ヘッダー ******/
-.header-menu__list a {
-  display: block;
-  padding: .5em;
-  font-size: rem(18);
-  color: #1c1c1c;
-  text-shadow: 1px 1px 5px;
-  transform: scale(1);
-  transition: .3s;
-  text-decoration: none;
-}
-
-.header-menu__list a:hover {
-  transform: scale(1.4);
+/******* 下層ページh2 ********/
+.sec-title__right::before {
+  content: '';
+  background: #ffe058;
+  position: absolute;
+  top: -40px;
+  right: 0;
+  border-style: solid;
+  border-width: 100px 0 0 80vw;
+  border-color: transparent transparent transparent #ebebeb;
+  width: 0;
+  height: 0;
+  margin: 0 -32px;
+  z-index: -1;
 }
 
 /******* コンテンツ ******/
 .member-wrap {
   display: flex;
+  visibility: visible;
+
 }
 
-.member-thumbnail {
-  position: relative;
-  width: 80%;
-  height: rem(300);
-  margin: 0 auto;
+.member-contents {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: rem(32);
 }
 
-.member-thumbnail img {
+.member-name {
+  padding: rem(16) 0;
+}
+
+.member-content {
+  display: flex;
+  justify-content: space-around;
+  width: rem(300);
+  margin: 0 auto rem(24);
+}
+
+.member-photo {
+  width: rem(200);
+  height: rem(200);
+}
+
+.member-photo img {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  object-fit: cover;
 }
 
-figcaption {
-  width: 100%;
-  height: rem(32);
-  line-height: rem(32);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-size: rem(14);
-  color: #ebebeb;
-}
+.member-social {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80%;
+  margin: auto 0;
 
-@include mq(tab) {
-  figcaption {
+  a {
+    display: inline-block;
     width: 100%;
-    height: rem(32);
-    line-height: rem(32);
-    padding-left: rem(16);
+  }
+
+}
+
+@media screen and (max-width: 479px) {
+
+  /******* ハンバーガーメニュー ******/
+  .header-menu {
+    width: 40%;
+    height: 100vh;
+    padding-top: 40px;
+    position: fixed;
+    top: 0;
+    right: -40%;
+    z-index: 200;
+    overflow-y: auto;
+    background-color: rgba(235, 235, 235, .9);
+    transition: all .6s;
+  }
+
+  .nav_btn {
+    width: 44px;
+    height: 44px;
+    position: fixed;
+    bottom: 32px;
+    right: 16px;
+    z-index: 300;
+    cursor: pointer;
+  }
+
+  .hamburger_line {
+    width: 34px;
+    height: 2px;
     position: absolute;
-    bottom: 0;
+    left: 5px;
+    background-color: #1c1c1c;
+    transition: all .6s;
+  }
+
+  .hamburger_line1 {
+    top: 10px;
+  }
+
+  .hamburger_line2 {
+    top: 21px;
+  }
+
+  .hamburger_line3 {
+    top: 32px;
+  }
+
+  .nav_bg {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    position: fixed;
+    top: 0;
     left: 0;
-    font-size: rem(14);
-    color: #ebebeb;
+    z-index: 100;
+    visibility: hidden;
+    background-color: rgba(28, 28, 28, .9);
+    transition: all .6s;
+    cursor: pointer;
+  }
+
+  /* 表示された時用のCSS */
+  .nav_open #header .drawer__menu {
+    right: 0;
+  }
+
+  .nav_open .nav_bg {
+    opacity: .8;
+    visibility: visible;
+  }
+
+  .nav_open .hamburger_line1 {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+
+  .nav_open .hamburger_line2 {
+    width: 0;
+    left: 50%;
+  }
+
+  .nav_open .hamburger_line3 {
+    transform: rotate(-45deg);
+    top: 20px;
   }
 
 }

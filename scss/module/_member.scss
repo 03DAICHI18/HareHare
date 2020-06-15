@@ -1,6 +1,7 @@
 .member-wrap {
   display: flex;
   flex-wrap: wrap;
+  visibility: hidden;
 }
 
 .member-thumbnail {
@@ -10,6 +11,7 @@
   padding-top: 50%;
   outline: 1px solid #111;
   overflow: hidden;
+  visibility: visible;
 }
 
 @include mq(tab) {
@@ -34,14 +36,14 @@
   left: 0;
   object-fit: cover;
   cursor: pointer;
-  filter: grayscale(90%);
+  filter: grayscale(0);
+  transform: scale(1.1);
   transition-duration: 0.3s;
 }
 
-
-.member-thumbnail img:hover {
-  filter: grayscale(0);
-  transform: scale(1.1);
+.member-wrap:hover .member-thumbnail img:not(:hover) {
+  filter: grayscale(90%);
+  transform: scale(1);
   transition-duration: 0.5s;
 }
 

@@ -6,6 +6,7 @@
     position: absolute;
     bottom: rem(24);
     right: 0px;
+    margin-bottom: rem(40);
   }
 
   .site-title__text {
@@ -65,7 +66,7 @@
 
   @-webkit-keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 30px, 0);
     }
 
     100% {
@@ -75,7 +76,7 @@
 
   @keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 30px, 0);
     }
 
     100% {
@@ -91,7 +92,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 100;
+    z-index: 200;
   }
 
 
@@ -153,7 +154,7 @@
 
   @-webkit-keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 40px, 0);
     }
 
     100% {
@@ -163,7 +164,7 @@
 
   @keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 40px, 0);
     }
 
     100% {
@@ -181,7 +182,7 @@
 
   @-webkit-keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 60px, 0);
     }
 
     100% {
@@ -191,7 +192,7 @@
 
   @keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 60px, 0);
     }
 
     100% {
@@ -200,11 +201,16 @@
   }
 }
 
+/********** 以下、セクション共通余白 **********/
+.section-wrap {
+  margin: rem(100) 0;
+}
+
 /********** 以下、h2 **********/
 .sec-title {
   font-size: rem(40);
   text-align: center;
-  margin: rem(80) 0 rem(16);
+  margin-bottom: rem(64);
 }
 
 .sec-title__left {
@@ -219,7 +225,7 @@
 @media screen and (min-width: 480px) {
   .sec-title {
     font-size: rem(60);
-    margin: 120px 0 40px;
+    margin: rem(120) 0 rem(80);
   }
 }
 
@@ -324,9 +330,4 @@
 .pagefeed::after {
   content: ">";
   padding-left: rem(8);
-}
-
-/********** 以下、セクション共通余白 **********/
-.section-wrap {
-  padding: rem(40) 0;
 }

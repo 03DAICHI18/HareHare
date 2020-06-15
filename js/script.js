@@ -1,13 +1,20 @@
 $(function () {
-  // ・・・・・・・・・・・・・・・・・・ページ内スムーススクロール・・・・・・・・・・・・・・・・・・
+  // ・・・・・・・・・・・・・・・・・・ページ内スムーススクロール・・・・・・・・・・・・・・・・・
+  var headerHeight = $('#header').outerHeight();
+  var urlHash = location.hash;
+  if (urlHash) {
+    $('body,html').stop().scrollTop(0);
+    setTimeout(function () {
+      var target = $(urlHash);
+      var position = target.offset().top - headerHeight;
+      $('body,html').stop().animate({ scrollTop: position }, 500);
+    }, 100);
+  }
   $('a[href^="#"]').click(function () {
-    // クリックした要素のhref属性の値を取得
-    var anchor = $(this).attr("href");
-    // 表示位置を取得
-    var position = $(anchor).offset().top + -100;
-    // アニメーションの効果の作成
-    $('body,html').animate({ scrollTop: position }, 500);
-    return false;
+    var href = $(this).attr("href");
+    var target = $(href);
+    var position = target.offset().top - headerHeight - 50;
+    $('body,html').stop().animate({ scrollTop: position }, 500);
   });
 
   // ・・・・・・・・・・・・・・・・・・セクションタイトルスクロールイン・・・・・・・・・・・・・・・・・・
@@ -28,20 +35,6 @@ $(function () {
       }
     });
 
-    // ・・・・・・・・・・・ヘッダー文字色変化・・・・・・・・・・・・・・・・
-    var Header = $('.header-menu__list a');
-    var harehare = $('#harehare');
-    //ウィンドウ枠からのharehare位置を取得
-    var harehareTop = harehare.offset().top;
-    // ウィンドウ枠からのスクロール量を取得
-    var winTop = $(this).scrollTop();
-    //harehareがウィンドウ枠より上にきたら文字色を黒に
-    if (winTop >= harehareTop - 180) {
-      Header.css('color', '#1c1c1c');
-      //harehareがウィンドウ枠より下であれば文字色は白に
-    } else if (winTop <= harehareTop) {
-      Header.css('color', '#ebebeb');
-    }
   });
 
 });

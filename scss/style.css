@@ -56,6 +56,7 @@ a {
     position: absolute;
     bottom: 1.5rem;
     right: 0px;
+    margin-bottom: 2.5rem;
   }
   .site-title__text {
     width: 320px;
@@ -106,7 +107,7 @@ a {
   }
   @-webkit-keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 30px, 0);
     }
     100% {
       clip: rect(0, 320px, 30px, 0);
@@ -114,7 +115,7 @@ a {
   }
   @keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 30px, 0);
     }
     100% {
       clip: rect(0, 320px, 30px, 0);
@@ -128,7 +129,7 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 100;
+    z-index: 200;
   }
   .site-title__text {
     width: 480px;
@@ -180,7 +181,7 @@ a {
   }
   @-webkit-keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 40px, 0);
     }
     100% {
       clip: rect(0, 480px, 40px, 0);
@@ -188,7 +189,7 @@ a {
   }
   @keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 40px, 0);
     }
     100% {
       clip: rect(0, 480px, 40px, 0);
@@ -203,7 +204,7 @@ a {
   }
   @-webkit-keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 60px, 0);
     }
     100% {
       clip: rect(0, 600px, 60px, 0);
@@ -211,7 +212,7 @@ a {
   }
   @keyframes textin {
     0% {
-      clip: rect(0, 0, 0, 0);
+      clip: rect(0, 0, 60px, 0);
     }
     100% {
       clip: rect(0, 600px, 60px, 0);
@@ -219,11 +220,16 @@ a {
   }
 }
 
+/********** 以下、セクション共通余白 **********/
+.section-wrap {
+  margin: 6.25rem 0;
+}
+
 /********** 以下、h2 **********/
 .sec-title {
   font-size: 2.5rem;
   text-align: center;
-  margin: 5rem 0 1rem;
+  margin-bottom: 4rem;
 }
 
 .sec-title__left {
@@ -238,7 +244,7 @@ a {
 @media screen and (min-width: 480px) {
   .sec-title {
     font-size: 3.75rem;
-    margin: 120px 0 40px;
+    margin: 7.5rem 0 5rem;
   }
 }
 
@@ -342,11 +348,6 @@ a {
 .pagefeed::after {
   content: ">";
   padding-left: 0.5rem;
-}
-
-/********** 以下、セクション共通余白 **********/
-.section-wrap {
-  padding: 2.5rem 0;
 }
 
 .load-wrap {
@@ -637,6 +638,7 @@ a {
     position: relative;
     width: 100%;
     height: 100%;
+    z-index: 100;
   }
   .youtube-wrap::after {
     position: absolute;
@@ -654,51 +656,124 @@ a {
   }
 }
 
-#header {
-  width: 100%;
-  height: 10vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-}
-
-.header-menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 800px;
-  height: 10vh;
-  margin: 0 auto;
-}
-
-.header-menu__list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @media screen and (max-width: 479px) {
+  /******* ハンバーガーメニュー ******/
+  .header-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+    width: 40%;
+    height: 100vh;
+    padding-top: 40px;
+    position: fixed;
+    top: 0;
+    right: -40%;
+    z-index: 200;
+    overflow-y: auto;
+    background-color: rgba(235, 235, 235, 0.9);
+    transition: all .6s;
+  }
   .header-menu__list {
-    width: calc(100% / 3);
+    padding: 1rem;
+  }
+  .nav_btn {
+    width: 44px;
+    height: 44px;
+    position: fixed;
+    bottom: 32px;
+    right: 16px;
+    z-index: 300;
+    cursor: pointer;
+  }
+  .hamburger_line {
+    width: 34px;
+    height: 2px;
+    position: absolute;
+    left: 5px;
+    background-color: #1c1c1c;
+    transition: all .6s;
+  }
+  .hamburger_line1 {
+    top: 10px;
+  }
+  .hamburger_line2 {
+    top: 21px;
+  }
+  .hamburger_line3 {
+    top: 32px;
+  }
+  .nav_bg {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 100;
+    visibility: hidden;
+    background-color: rgba(28, 28, 28, 0.9);
+    transition: all .6s;
+    cursor: pointer;
+  }
+  /* 表示された時用のCSS */
+  .nav_open #header .header-menu {
+    right: 0;
+  }
+  .nav_open .nav_bg {
+    opacity: .8;
+    visibility: visible;
+  }
+  .nav_open .hamburger_line1 {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+  .nav_open .hamburger_line2 {
+    width: 0;
+    left: 50%;
+  }
+  .nav_open .hamburger_line3 {
+    transform: rotate(-45deg);
+    top: 20px;
   }
 }
 
-.header-menu__list a {
-  display: block;
-  padding: .5em;
-  font-size: 1.125rem;
-  color: #ebebeb;
-  text-shadow: 1px 1px 5px;
-  transform: scale(1);
-  transition: .3s;
-  text-decoration: none;
-}
-
-.header-menu__list a:hover {
-  transform: scale(1.4);
+@media screen and (min-width: 480px) {
+  .header {
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+  .header-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    height: 10vh;
+    margin: 0 auto;
+  }
+  .header-menu__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-menu__list a {
+    display: block;
+    padding: .5em;
+    font-size: 1.125rem;
+    color: #1c1c1c;
+    text-shadow: 1px 1px 5px;
+    transform: scale(1);
+    transition: .3s;
+    text-decoration: none;
+  }
+  .header-menu__list a:hover {
+    transform: scale(1.4);
+  }
 }
 
 @media screen and (min-width: 320px) {
@@ -799,6 +874,7 @@ a {
 .member-wrap {
   display: flex;
   flex-wrap: wrap;
+  visibility: hidden;
 }
 
 .member-thumbnail {
@@ -808,6 +884,7 @@ a {
   padding-top: 50%;
   outline: 1px solid #111;
   overflow: hidden;
+  visibility: visible;
 }
 
 @media screen and (min-width: 600px) {
@@ -832,13 +909,14 @@ a {
   left: 0;
   object-fit: cover;
   cursor: pointer;
-  filter: grayscale(90%);
+  filter: grayscale(0);
+  transform: scale(1.1);
   transition-duration: 0.3s;
 }
 
-.member-thumbnail img:hover {
-  filter: grayscale(0);
-  transform: scale(1.1);
+.member-wrap:hover .member-thumbnail img:not(:hover) {
+  filter: grayscale(90%);
+  transform: scale(1);
   transition-duration: 0.5s;
 }
 

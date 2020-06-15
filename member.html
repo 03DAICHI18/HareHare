@@ -38,20 +38,38 @@
   <link rel="stylesheet" href="scss/page/member-about.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300&family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 </head>
 <body>
+  <div class="bottom-title">
+    <h1 class="site-title__text bottom-title__text" data-txt="HareHare Official Site">HareHare Official Site</h1>
+  </div>
   <!-- グローバルナビ -->
-  <header id="header">
-    <nav>
+  <header id="header" class="header">
+    <nav class="drawer-menu">
       <ul class="header-menu">
-        <li class="header-menu__list"><a href="#harehare">HareHare</a></li>
-        <li class="header-menu__list"><a href="#release">Release</a></li>
-        <li class="header-menu__list"><a href="#information">Information</a></li>
-        <li class="header-menu__list"><a href="#member">Member</a></li>
-        <li class="header-menu__list"><a href="#social">Social</a></li>
-        <li class="header-menu__list"><a href="#contact">Contact</a></li>
+        <ul class="member-menu">
+          <li class="header-menu__list member-menu__list"><a href="#member1">Dr.Tosh/永井利充</a></li>
+          <li class="header-menu__list member-menu__list"><a href="#member2">Peace-K</a></li>
+          <li class="header-menu__list member-menu__list"><a href="#member3">Crystal myuu</a></li>
+          <li class="header-menu__list member-menu__list"><a href="#member4">Junon</a></li>
+          <li class="header-menu__list member-menu__list"><a href="#member5">mako-tone</a></li>
+        </ul>
+        <li class="header-menu__list"><a href="index.html#harehare">HareHare</a></li>
+        <li class="header-menu__list"><a href="index.html#release">Release</a></li>
+        <li class="header-menu__list"><a href="index.html#information">Information</a></li>
+        <li class="header-menu__list"><a href="index.html#member">Member</a></li>
+        <li class="header-menu__list"><a href="index.html#social">Social</a></li>
+        <li class="header-menu__list"><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
+    <!-- ハンバーガーボタン -->
+    <div class="nav_btn" id="nav_btn">
+      <span class="hamburger_line hamburger_line1"></span>
+      <span class="hamburger_line hamburger_line2"></span>
+      <span class="hamburger_line hamburger_line3"></span>
+    </div>
+    <div class="nav_bg" id="nav_bg"></div>
   </header>
   <div id="wrap">
     <main>
@@ -59,47 +77,126 @@
       <section id="member">
         <h2 class="sec-title sec-title__right ">Member</h2>
         <div class="member-wrap section-wrap">
-          <figure class="member-thumbnail">
-            <img src="img/sp-hero.jpg" alt="">
-            <figcaption>Dr.Tosh/永井利充(vo.b)</figcaption>
-            <div class="member-social">
-              <a target="blank" rel="noopener" href="https://twitter.com/DrTosh777"><i class="fab fa-twitter fa-2x"></i></a>
-              <a target="blank" rel="noopener" href="https://www.facebook.com/tosh.nagai.1"><i class="fab fa-facebook-f fa-2x"></i></a>
+          <div id="member1" class="member-contents">
+            <h3 class="member-name">Dr.Tosh/永井利充(vo.b)</h3>
+            <div class="member-content">
+              <figure class="member-photo">
+                <img src="img/sp-hero.jpg" alt="">
+              </figure>
+              <div class="member-social">
+                <a target="blank" rel="noopener" href="https://twitter.com/DrTosh777"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a target="blank" rel="noopener" href="https://www.facebook.com/tosh.nagai.1"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a target="blank" rel="noopener" href="#"><i class="fab fa-instagram-square fa-2x"></i></a>
+              </div>
             </div>
-            <p>ローザ・ルクセンブルグにて MIDI RECORDよりデビュー。その後に伝説のバンド「BO GUMBOS」を結成し中心メンバーとしてバンドを牽引、数多くの名盤を残す。</p>
-            <p>ニューオリンズサウンドを基盤においたその独自のサウンドは唯一無二の存在であり、今もなお国内のアーティスト達に多大なる影響を及ぼしている。</p>
-            <p>ボ・ディドリー、ネビルブラザースのメンバーなどをゲストに迎えてのファーストアルバムは、レコード大賞ニューアーティストアルバム賞に輝く。</p>
-            <p>UA、YUI、ヤン富田、真心ブラザーズ、エレファントラブはじめ数多くのアーティストとのコラボで話題を呼ぶ。(共演アーティスト:ボディドリー、ネビルブラザース、アラントゥーサン、忌野清志郎、YUKI、Nokko、泉谷しげる、東京スカパラダイスオーケストラ、サンディ、甲本ヒロト、など多数あり)</p>
-          </figure>
-          <figure class="member-thumbnail">
-            <img src="img/sp-hero.jpg" alt="">
-            <figcaption>Peace-K(vo.dr)</figcaption>
-            <div class="member-social">
-              <a target="blank" rel="noopener" href="https://twitter.com/peacek73"><i class="fab fa-twitter fa-2x"></i></a>
-              <a target="blank" rel="noopener" href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
-              <a target="blank" rel="noopener" href="https://www.instagram.com/peacek73/"><i class="fab fa-instagram fa-2x"></i></a>
+            <div class="memer-about">
+              <p>ローザ・ルクセンブルグにてMIDI RECORDよりデビュー。その後に伝説のバンド「BO GUMBOS」を結成し中心メンバーとしてバンドを牽引、数多くの名盤を残す。</p>
+              <p>ニューオリンズサウンドを基盤においたその独自のサウンドは唯一無二の存在であり、今もなお国内のアーティスト達に多大なる影響を及ぼしている。</p>
+              <p>ボ・ディドリー、ネビルブラザースのメンバーなどをゲストに迎えてのファーストアルバムは、レコード大賞ニューアーティストアルバム賞に輝く。</p>
+              <p>アラントゥーサン、忌野清志郎、YUKI、Nokko、泉谷しげる、東京スカパラダイスオーケストラ、サンディ、甲本ヒロト、など多数の有名アーティストとの共演もある愛のgroove伝道師。</p>
             </div>
-            <p>ドラム＆パーカッション&ウクレレ&hangを中心に、唄い、演奏するのが大好きな旅する音楽家。</p>
-            <p>Sandii、OKI、UA、YO-KING、Caravan、Spinna B-ILL、Keison、ハナレグミ、元ちとせ、鈴木慶一、曽我部恵一、PUFFY、PJ、The No problem's、(仮)ALBATRUS、児玉奈央など他多数のミュージシャンの様々なライヴ、レコーディングに参加。そんな縁のあるミュージシャン達が集う『Peace-K祭り』というイベントを各地で行っている。</p>
-            <p>現在Peace-Kソロとして、オリジナル、カバーなど好きな曲をウクレレ、hangなどでアコースティックにスペーシーサウンドで自由に唄い、ウクレレやパーカッションのワークショップも行い、各地を音と食と波とともにTRIP中。</p>
-          </figure>
-          <figure class="member-thumbnail">
-            <img src="img/sp-hero.jpg" alt="">
-            <figcaption>Crystal myuu(vo.syn)</figcaption>
-          </figure>
-          <figure class="member-thumbnail">
-            <img src="img/sp-hero.jpg" alt="">
-            <figcaption>Junon(g.cho)</figcaption>
-          </figure>
-          <figure class="member-thumbnail">
-            <img src="img/sp-hero.jpg" alt="">
-            <figcaption>mako-tone(key.cho)</figcaption>
-          </figure>
+          </div>
+          <div id="member2" class="member-contents">
+            <h3 class="member-name">Peace-K(vo.dr)</h3>
+            <div class="member-content">
+              <figure class="member-photo">
+                <img src="img/sp-hero.jpg" alt="">
+              </figure>
+              <div class="member-social">
+                <a target="blank" rel="noopener" href="https://twitter.com/peacek73"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a target="blank" rel="noopener" href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a target="blank" rel="noopener" href="https://www.instagram.com/peacek73/"><i class="fab fa-instagram-square fa-2x"></i></a>
+              </div>
+            </div>
+            <div class="memer-about">
+              <p>ドラム＆パーカッション&ウクレレ&hangを中心に、唄い、演奏するのが大好きな旅する音楽家。</p>
+              <p>Sandii、OKI、UA、YO-KING、Caravan、Spinna B-ILL、Keison、ハナレグミ、元ちとせ、鈴木慶一、曽我部恵一、PUFFY、PJ、The No problem's、(仮)ALBATRUS、児玉奈央など他多数のミュージシャンの様々なライヴ、レコーディングに参加。そんな縁のあるミュージシャン達が集う『Peace-K祭り』というイベントを各地で行っている。</p>
+              <p>現在Peace-Kソロとして、オリジナル、カバーなど好きな曲をウクレレ、hangなどでアコースティックにスペーシーサウンドで自由に唄い、ウクレレやパーカッションのワークショップも行い、各地を音と食と波とともにTRIP中。</p>
+            </div>
+          </div>
+          <div id="member3" class="member-contents">
+            <h3 class="member-name">Crystal myuu(vo.syn)</h3>
+            <div class="member-content">
+              <figure class="member-photo">
+                <img src="img/sp-hero.jpg" alt="">
+              </figure>
+              <div class="member-social">
+                <a target="blank" rel="noopener" href="https://twitter.com/peacek73"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a target="blank" rel="noopener" href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a target="blank" rel="noopener" href="https://www.instagram.com/peacek73/"><i class="fab fa-instagram-square fa-2x"></i></a>
+              </div>
+            </div>
+            <div class="memer-about">
+              <p>ドラム＆パーカッション&ウクレレ&hangを中心に、唄い、演奏するのが大好きな旅する音楽家。</p>
+              <p>Sandii、OKI、UA、YO-KING、Caravan、Spinna B-ILL、Keison、ハナレグミ、元ちとせ、鈴木慶一、曽我部恵一、PUFFY、PJ、The No problem's、(仮)ALBATRUS、児玉奈央など他多数のミュージシャンの様々なライヴ、レコーディングに参加。そんな縁のあるミュージシャン達が集う『Peace-K祭り』というイベントを各地で行っている。</p>
+              <p>現在Peace-Kソロとして、オリジナル、カバーなど好きな曲をウクレレ、hangなどでアコースティックにスペーシーサウンドで自由に唄い、ウクレレやパーカッションのワークショップも行い、各地を音と食と波とともにTRIP中。</p>
+            </div>
+          </div>
+          <div id="member4" class="member-contents">
+            <h3 class="member-name">Junon(g.cho)</h3>
+            <div class="member-content">
+              <figure class="member-photo">
+                <img src="img/sp-hero.jpg" alt="">
+              </figure>
+              <div class="member-social">
+                <a target="blank" rel="noopener" href="https://twitter.com/peacek73"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a target="blank" rel="noopener" href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a target="blank" rel="noopener" href="https://www.instagram.com/peacek73/"><i class="fab fa-instagram-square fa-2x"></i></a>
+              </div>
+            </div>
+            <div class="memer-about">
+              <p>ドラム＆パーカッション&ウクレレ&hangを中心に、唄い、演奏するのが大好きな旅する音楽家。</p>
+              <p>Sandii、OKI、UA、YO-KING、Caravan、Spinna B-ILL、Keison、ハナレグミ、元ちとせ、鈴木慶一、曽我部恵一、PUFFY、PJ、The No problem's、(仮)ALBATRUS、児玉奈央など他多数のミュージシャンの様々なライヴ、レコーディングに参加。そんな縁のあるミュージシャン達が集う『Peace-K祭り』というイベントを各地で行っている。</p>
+              <p>現在Peace-Kソロとして、オリジナル、カバーなど好きな曲をウクレレ、hangなどでアコースティックにスペーシーサウンドで自由に唄い、ウクレレやパーカッションのワークショップも行い、各地を音と食と波とともにTRIP中。</p>
+            </div>
+          </div>
+          <div id="member5" class="member-contents">
+            <h3 class="member-name">mako-tone(key.cho)</h3>
+            <div class="member-content">
+              <figure class="member-photo">
+                <img src="img/sp-hero.jpg" alt="">
+              </figure>
+              <div class="member-social">
+                <a target="blank" rel="noopener" href="https://twitter.com/peacek73"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a target="blank" rel="noopener" href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a target="blank" rel="noopener" href="https://www.instagram.com/peacek73/"><i class="fab fa-instagram-square fa-2x"></i></a>
+              </div>
+            </div>
+            <div class="memer-about">
+              <p>ドラム＆パーカッション&ウクレレ&hangを中心に、唄い、演奏するのが大好きな旅する音楽家。</p>
+              <p>Sandii、OKI、UA、YO-KING、Caravan、Spinna B-ILL、Keison、ハナレグミ、元ちとせ、鈴木慶一、曽我部恵一、PUFFY、PJ、The No problem's、(仮)ALBATRUS、児玉奈央など他多数のミュージシャンの様々なライヴ、レコーディングに参加。そんな縁のあるミュージシャン達が集う『Peace-K祭り』というイベントを各地で行っている。</p>
+              <p>現在Peace-Kソロとして、オリジナル、カバーなど好きな曲をウクレレ、hangなどでアコースティックにスペーシーサウンドで自由に唄い、ウクレレやパーカッションのワークショップも行い、各地を音と食と波とともにTRIP中。</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
     <!-- フッター -->
     <footer id="contact" class="sec-title">Contact</footer>
   </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="js/member.js"></script>
+  <script>
+    /* SP ハンバーガーメニュー */
+    function toggleNav() {
+      var body = document.body;
+      var hamburger = document.getElementById('nav_btn');
+      var blackBg = document.getElementById('nav_bg');
+      hamburger.addEventListener('click', function () {
+        body.classList.toggle('nav_open'); //メニュークリックでnav-openというクラスがbodyに付与
+      });
+      blackBg.addEventListener('click', function () {
+        body.classList.remove('nav_open'); //もう一度クリックで解除
+      });
+    }
+    toggleNav();
+    var movefun = function (event) {
+      event.preventDefault();
+      // 背景画面のスクロール停止の処理
+      window.addEventListener('touchmove', movefun, { passive: false });
+      // 背景画面のスクロール停止することを停止する処理
+      window.removeEventListener('touchmove', movefun, { passive: false });
+    }
+  </script>
 </body>
 </html>
