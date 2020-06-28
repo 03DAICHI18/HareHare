@@ -662,16 +662,15 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem 0.5rem;
-    width: 40%;
+    align-items: center;
+    width: 12.5rem;
     height: 100vh;
-    padding-top: 40px;
     position: fixed;
     top: 0;
-    right: -40%;
+    right: -12.5rem;
     z-index: 200;
     overflow-y: auto;
-    background-color: rgba(235, 235, 235, 0.9);
+    background-color: rgba(220, 220, 220, 0.9);
     transition: all .6s;
   }
   .header-menu__list {
@@ -681,7 +680,7 @@ a {
     width: 44px;
     height: 44px;
     position: fixed;
-    bottom: 32px;
+    top: 32px;
     right: 16px;
     z-index: 300;
     cursor: pointer;

@@ -45,107 +45,55 @@ html {
   z-index: -1;
 }
 
-/******* コンテンツ ******/
-.member-wrap {
-  display: flex;
-  visibility: visible;
-}
-
-.member-contents {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-}
-
-.member-name {
-  padding: 1rem 0;
-}
-
-.member-content {
-  display: flex;
-  justify-content: space-around;
-  width: 18.75rem;
-  margin: 0 auto 1.5rem;
-}
-
-.member-photo {
-  width: 12.5rem;
-  height: 12.5rem;
-}
-
-.member-photo img {
-  width: 100%;
-  height: 100%;
-}
-
-.member-social {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 80%;
-  margin: auto 0;
-}
-
-.member-social a {
-  display: inline-block;
-  width: 100%;
-}
-
+/******* ヘッダー ******/
 @media screen and (max-width: 479px) {
   /******* ハンバーガーメニュー ******/
-  .header-menu {
-    width: 40%;
+  .member-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 12.5rem;
     height: 100vh;
-    padding-top: 40px;
     position: fixed;
     top: 0;
-    right: -40%;
+    right: -12.5rem;
     z-index: 200;
     overflow-y: auto;
-    background-color: rgba(235, 235, 235, 0.9);
+    background-color: rgba(220, 220, 220, 0.9);
     transition: all .6s;
   }
-  .nav_btn {
-    width: 44px;
-    height: 44px;
-    position: fixed;
-    bottom: 32px;
-    right: 16px;
-    z-index: 300;
-    cursor: pointer;
+  .member-menu__list {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
   }
-  .hamburger_line {
-    width: 34px;
-    height: 2px;
+  .member-menu__list:nth-child(-n + 5) {
+    background-color: #d36836;
+  }
+  .member-menu__list:nth-child(1)::before {
+    content: "<member>";
     position: absolute;
-    left: 5px;
-    background-color: #1c1c1c;
-    transition: all .6s;
+    top: 3rem;
+    left: 0.5rem;
   }
-  .hamburger_line1 {
-    top: 10px;
+  .member-menu__list:nth-child(1) {
+    padding-top: 3rem;
   }
-  .hamburger_line2 {
-    top: 21px;
+  .member-menu__list:nth-child(5) {
+    padding-bottom: 2.5rem;
   }
-  .hamburger_line3 {
-    top: 32px;
+  .member-menu__list:nth-child(6) {
+    padding-top: 3rem;
   }
-  .nav_bg {
-    width: 100vw;
-    height: 100vh;
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    visibility: hidden;
-    background-color: rgba(28, 28, 28, 0.9);
-    transition: all .6s;
-    cursor: pointer;
+  .member-menu__list:nth-child(6)::before {
+    content: "<top menu>";
+    position: absolute;
+    top: 21.25rem;
+    left: 0.5rem;
   }
   /* 表示された時用のCSS */
-  .nav_open #header .drawer__menu {
+  .nav_open #header .member-menu {
     right: 0;
   }
   .nav_open .nav_bg {
@@ -163,5 +111,89 @@ html {
   .nav_open .hamburger_line3 {
     transform: rotate(-45deg);
     top: 20px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .header {
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+  .member-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    height: 10vh;
+    margin: 0 auto;
+  }
+  .member-menu__list:nth-child(-n + 5) {
+    display: none;
+  }
+  .member-menu__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .member-menu__list a {
+    display: block;
+    padding: .5em;
+    font-size: 1.125rem;
+    color: #1c1c1c;
+    text-shadow: 1px 1px 5px;
+    transform: scale(1);
+    transition: .3s;
+    text-decoration: none;
+  }
+  .member-menu__list a:hover {
+    transform: scale(1.4);
+  }
+}
+
+/******* コンテンツ ******/
+@media screen and (min-width: 600px) {
+  .member-wrap {
+    display: flex;
+    visibility: visible;
+  }
+  .member-contents {
+    width: 70%;
+    margin-bottom: 5rem;
+  }
+  .member-contents:nth-child(2n) {
+    margin-left: auto;
+  }
+  .member-name {
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+  .member-content {
+    display: flex;
+    margin-bottom: 1.5rem;
+  }
+  .member-photo {
+    width: 25rem;
+    height: 25rem;
+  }
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+  }
+  .member-social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 15rem;
+    margin: auto 1rem;
+  }
+  .member-social a {
+    display: inline-block;
+    font-size: 1.5rem;
+    width: 100%;
   }
 }

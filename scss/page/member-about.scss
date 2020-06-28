@@ -45,117 +45,66 @@
   z-index: -1;
 }
 
-/******* コンテンツ ******/
-.member-wrap {
-  display: flex;
-  visibility: visible;
-
-}
-
-.member-contents {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: rem(32);
-}
-
-.member-name {
-  padding: rem(16) 0;
-}
-
-.member-content {
-  display: flex;
-  justify-content: space-around;
-  width: rem(300);
-  margin: 0 auto rem(24);
-}
-
-.member-photo {
-  width: rem(200);
-  height: rem(200);
-}
-
-.member-photo img {
-  width: 100%;
-  height: 100%;
-}
-
-.member-social {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 80%;
-  margin: auto 0;
-
-  a {
-    display: inline-block;
-    width: 100%;
-  }
-
-}
-
+/******* ヘッダー ******/
 @media screen and (max-width: 479px) {
 
   /******* ハンバーガーメニュー ******/
-  .header-menu {
-    width: 40%;
+  .member-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: rem(200);
     height: 100vh;
-    padding-top: 40px;
     position: fixed;
     top: 0;
-    right: -40%;
+    right: rem(-200);
     z-index: 200;
     overflow-y: auto;
-    background-color: rgba(235, 235, 235, .9);
+    background-color: rgba(220, 220, 220, 0.9);
     transition: all .6s;
   }
 
-  .nav_btn {
-    width: 44px;
-    height: 44px;
-    position: fixed;
-    bottom: 32px;
-    right: 16px;
-    z-index: 300;
-    cursor: pointer;
+  .member-menu__list {
+    width: 100%;
+    text-align: center;
+    padding: rem(16);
   }
 
-  .hamburger_line {
-    width: 34px;
-    height: 2px;
+  // メンバーリスト
+  .member-menu__list:nth-child(-n + 5) {
+    background-color: #d36836;
+  }
+
+  .member-menu__list:nth-child(1)::before {
+    content: "<member>";
     position: absolute;
-    left: 5px;
-    background-color: #1c1c1c;
-    transition: all .6s;
+    top: rem(48);
+    left: rem(8);
   }
 
-  .hamburger_line1 {
-    top: 10px;
+  .member-menu__list:nth-child(1) {
+    padding-top: rem(48);
   }
 
-  .hamburger_line2 {
-    top: 21px;
+  .member-menu__list:nth-child(5) {
+    padding-bottom: rem(40);
   }
 
-  .hamburger_line3 {
-    top: 32px;
+  // トップメニューリスト
+  .member-menu__list:nth-child(6) {
+    padding-top: rem(48);
   }
 
-  .nav_bg {
-    width: 100vw;
-    height: 100vh;
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    visibility: hidden;
-    background-color: rgba(28, 28, 28, .9);
-    transition: all .6s;
-    cursor: pointer;
+  .member-menu__list:nth-child(6)::before {
+    content: "<top menu>";
+    position: absolute;
+    top: rem(340);
+    left: rem(8);
   }
 
   /* 表示された時用のCSS */
-  .nav_open #header .drawer__menu {
+  .nav_open #header .member-menu {
     right: 0;
   }
 
@@ -179,4 +128,105 @@
     top: 20px;
   }
 
+}
+
+@media screen and (min-width: 480px) {
+  .header {
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+
+  .member-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    height: 10vh;
+    margin: 0 auto;
+  }
+
+
+  .member-menu__list:nth-child(-n + 5) {
+    display: none; // PC時はメンバーリストを非表示
+  }
+
+  .member-menu__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .member-menu__list a {
+    display: block;
+    padding: .5em;
+    font-size: rem(18);
+    color: #1c1c1c;
+    text-shadow: 1px 1px 5px;
+    transform: scale(1);
+    transition: .3s;
+    text-decoration: none;
+  }
+
+  .member-menu__list a:hover {
+    transform: scale(1.4);
+  }
+}
+
+/******* コンテンツ ******/
+@include mq(tab) {
+  .member-wrap {
+    display: flex;
+    visibility: visible;
+  }
+
+  .member-contents {
+    width: 70%;
+    margin-bottom: rem(80);
+  }
+
+  .member-contents:nth-child(2n) {
+    margin-left: auto;
+  }
+
+  .member-name {
+    font-size: rem(32);
+    padding: rem(16) 0;
+  }
+
+  .member-content {
+    display: flex;
+    // justify-content: space-around;
+    // width: rem(300);
+    margin-bottom: rem(24);
+  }
+
+  .member-photo {
+    width: rem(400);
+    height: rem(400);
+  }
+
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .member-social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: rem(240);
+    margin: auto rem(16);
+
+    a {
+      display: inline-block;
+      font-size: rem(24);
+      width: 100%;
+    }
+
+  }
 }
